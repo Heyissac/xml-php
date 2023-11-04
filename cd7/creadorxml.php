@@ -41,15 +41,36 @@ $leaf3->appendChild($dom->createTextNode('Ahead of the release of Call of Duty: 
 As reported by IGN, players with early access to the game’s single-player campaign found that the total file size for Call of Duty at installation — which also includes the Modern Warfare II campaign, Warzone, and Call of Duty HQ — now comes in at 234.9GB on PlayStation 5. For PC gamers, the file size is a slightly more palatable 172GB with the Modern Warfare II campaign and Warzone installed.'));
 $branch3->appendChild($leaf3);
 
-//Add branches to the root of the XML file.
-$root->appendChild($branch);
-$root->appendChild($branch2);
-$root->appendChild($branch3);
+if (isset($_POST['create-xml'])) {
+    //Add branches to the root of the XML file.
+    $root->appendChild($branch);
+    $root->appendChild($branch2);
+    $root->appendChild($branch3);
 
-//Add the root to the dom.
-$dom->appendChild($root);
+    //Add the root to the dom.
+    $dom->appendChild($root);
 
-//Save the dom in a XML file.
-$dom->save('assets/xml/archivo.xml');
-echo 'Archivo XML creado exitosamente';
+    //Save the dom in a XML file.
+    $dom->save('assets/xml/archivo.xml');
+    header('location: examinador.php');
+}
 ?>
+
+<!doctype html>
+<html lang="es">
+
+<head>
+    <title>Daily Bugle</title>
+    <link rel="shortcut icon" href="assets/images/news-logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/create.css">
+</head>
+
+<body>
+    <h1>Daily Bugle XML news</h1>
+    <form method="POST" id="create-form" name="create-form">
+        <h3>Si no has creado tu archivo XML, créalo ahora mismo</h3>
+        <button type="submit" id="create-xml" name="create-xml">Crear archivo XML</button>
+    </form>
+</body>
+
+</html>

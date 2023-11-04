@@ -1,0 +1,59 @@
+@font-face {
+    font-family: 'AbrilFatface-Regular';
+    src: url('../fonts/AbrilFatface-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+h1 {
+    font-family: AbrilFatface-Regular;
+    font-size: 5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#create-form {
+    text-align: center;
+}
+
+h3 {
+    font-size: 2em;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+#create-xml {
+    background-color: #FF9B00;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.8em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 50px;
+}
+
+#create-xml:hover {
+    background-color: #FCB648;
+}
+
+.centered-image {
+    text-align: center;
+}
+
+.centered-image img {
+    max-width: 100%;
+    height: auto;
+}

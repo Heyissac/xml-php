@@ -1,3 +1,17 @@
+@font-face {
+    font-family: 'AbrilFatface-Regular';
+    src: url('../fonts/AbrilFatface-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'JosefinSans-Bold';
+    src: url('../fonts/JosefinSans-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -11,11 +25,14 @@ body {
 }
 
 h1 {
-    font-size: 24px;
+    font-family: AbrilFatface-Regular;
+    font-size: 45px;
     margin-top: 0;
+    text-align: center;
 }
 
 h2 {
+    font-family: JosefinSans-Bold;
     font-size: 20px;
 }
 
@@ -42,7 +59,7 @@ form {
     border: none;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2), rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
-    padding: 20px; 
+    padding: 20px;
     margin-bottom: 50px;
 }
 
@@ -52,30 +69,72 @@ form {
 
 input[type="text"] {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     font-size: 16px;
-    margin-bottom: 10px;
-    border-radius: 5px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    background-color: #f0f0f0;
+    transition: background-color 0.3s;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+    color: #333;
+}
+
+input[type="text"]:focus {
+    background-color: #ffffff;
+    box-shadow: 0 0 5px rgba(250, 152, 0, 1)
 }
 
 input[type="submit"] {
-    background-color: #007BFF;
+    background-color: #FF9B00;
     color: #fff;
     padding: 10px 20px;
     font-size: 16px;
     border: none;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 20px;
     align-self: center;
 }
 
 input[type="submit"]:hover {
-    background-color: #0056b3;
+    background-color: #FCB648;
 }
 
-#notification {
-    background-color: #ff0000;
-    color: #fff; 
-    padding: 10px;
+.label-class {
+    margin-top: 10px;
+}
+
+/* ----- custom alert ------ */
+.custom-alert {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #710202;
+    color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-family: 'Arial', sans-serif;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
     text-align: center;
+}
+
+.custom-alert p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-alert .close-button {
+    font-size: 30px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.custom-alert .close-button:hover {
+    color: #ff5733;
 }
